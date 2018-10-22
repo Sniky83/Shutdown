@@ -7,5 +7,3 @@ une pop-up s'affichera et vous dira que l'ordinateur s'éteindra/ se mettre en v
 
 Vous pouvez également accéder à la partie "Avancé" qui possède une option différente de celle de base comme : mettre en veille le PC à la fin du téléchargement,
 et si vous le souhaitez, vous pouvez moduler votre download vous-même dans le cas où le download serait bridé par exemple.
-
-Enjoy :)
