@@ -1,0 +1,11 @@
+D:\OneDrive\Documents\MesApplications\Shutdown\Shutdown\bin\Release\Shutdown.exe.config
+D:\OneDrive\Documents\MesApplications\Shutdown\Shutdown\bin\Release\Shutdown.exe
+D:\OneDrive\Documents\MesApplications\Shutdown\Shutdown\bin\Release\Shutdown.pdb
+D:\OneDrive\Documents\MesApplications\Shutdown\Shutdown\obj\Release\Shutdown.csprojResolveAssemblyReference.cache
+D:\OneDrive\Documents\MesApplications\Shutdown\Shutdown\obj\Release\Shutdown.Form1.resources
+D:\OneDrive\Documents\MesApplications\Shutdown\Shutdown\obj\Release\Shutdown.Form2.resources
+D:\OneDrive\Documents\MesApplications\Shutdown\Shutdown\obj\Release\Shutdown.Properties.Resources.resources
+D:\OneDrive\Documents\MesApplications\Shutdown\Shutdown\obj\Release\Shutdown.csproj.GenerateResource.Cache
+D:\OneDrive\Documents\MesApplications\Shutdown\Shutdown\obj\Release\Shutdown.csproj.CoreCompileInputs.cache
+D:\OneDrive\Documents\MesApplications\Shutdown\Shutdown\obj\Release\Shutdown.exe
+D:\OneDrive\Documents\MesApplications\Shutdown\Shutdown\obj\Release\Shutdown.pdb
