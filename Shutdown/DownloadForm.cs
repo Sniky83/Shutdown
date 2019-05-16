@@ -8,84 +8,26 @@ using System.Runtime.InteropServices;
 
 namespace Shutdown
 {
-    public partial class Form1 : Form
+    public partial class DownloadForm : Form
     {
         private byte compteur = 0;
         private bool flag = false;
         private long previousbytesreceived = 0;
         private long Download;
-        private Form2 f2 = new Form2();
+        private AdvencedForm f2 = new AdvencedForm();
+        private C_Alimentation alim;
         //NetworkInterfaceConnexion (attribution de la NIC de defaut)
         private NetworkInterface Nic = (NetworkInterface.GetAllNetworkInterfaces().FirstOrDefault
         (i => i.NetworkInterfaceType != NetworkInterfaceType.Loopback && i.NetworkInterfaceType != NetworkInterfaceType.Tunnel));
         IPv4InterfaceStatistics interfaceStats;
 
-        public Form1()
+        public DownloadForm()
         {
             InitializeComponent();
+            alim = new C_Alimentation();
         }
 
-        private void Shutdown()
-        {
-            const string SE_SHUTDOWN_NAME = "SeShutdownPrivilege";
-            const short SE_PRIVILEGE_ENABLED = 2;
-            const uint EWX_SHUTDOWN = 1;
-            const short TOKEN_ADJUST_PRIVILEGES = 32;
-            const short TOKEN_QUERY = 8;
-            IntPtr hToken;
-            TOKEN_PRIVILEGES tkp;
-
-            // Get shutdown privileges...
-            OpenProcessToken(Process.GetCurrentProcess().Handle,
-                TOKEN_ADJUST_PRIVILEGES | TOKEN_QUERY, out hToken);
-            tkp.PrivilegeCount = 1;
-            tkp.Privileges.Attributes = SE_PRIVILEGE_ENABLED;
-            LookupPrivilegeValue("", SE_SHUTDOWN_NAME, out tkp.Privileges.pLuid);
-            AdjustTokenPrivileges(hToken, false, ref tkp, 0U, IntPtr.Zero,
-                  IntPtr.Zero);
-
-            // Now we have the privileges, shutdown Windows
-            ExitWindowsEx(EWX_SHUTDOWN, 0);
-        }
-
-        // Structures needed for the API calls
-        private struct LUID
-        {
-            public int LowPart;
-            public int HighPart;
-        }
-        private struct LUID_AND_ATTRIBUTES
-        {
-            public LUID pLuid;
-            public int Attributes;
-        }
-        private struct TOKEN_PRIVILEGES
-        {
-            public int PrivilegeCount;
-            public LUID_AND_ATTRIBUTES Privileges;
-        }
-
-        [DllImport("advapi32.dll")]
-        static extern int OpenProcessToken(IntPtr ProcessHandle,
-                             int DesiredAccess, out IntPtr TokenHandle);
-
-        [DllImport("advapi32.dll", SetLastError = true)]
-        [return: MarshalAs(UnmanagedType.Bool)]
-        static extern bool AdjustTokenPrivileges(IntPtr TokenHandle,
-            [MarshalAs(UnmanagedType.Bool)]bool DisableAllPrivileges,
-            ref TOKEN_PRIVILEGES NewState,
-            UInt32 BufferLength,
-            IntPtr PreviousState,
-            IntPtr ReturnLength);
-
-        [DllImport("advapi32.dll")]
-        static extern int LookupPrivilegeValue(string lpSystemName,
-                               string lpName, out LUID lpLuid);
-
-        [DllImport("user32.dll", SetLastError = true)]
-        static extern int ExitWindowsEx(uint uFlags, uint dwReason);
-
-        private void button1_Click(object sender, EventArgs e)
+        private void btn_Start_Click(object sender, EventArgs e)
         {
             lbl_etat.ForeColor = Color.Orange;
             lbl_etat.Text = "En attente d'un téléchargement...";
@@ -94,7 +36,7 @@ namespace Shutdown
             btn_Start.Enabled = false;
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btn_Stop_Click(object sender, EventArgs e)
         {
             lbl_etat.ForeColor = Color.Red;
             lbl_etat.Text = "OFF";
@@ -135,7 +77,7 @@ namespace Shutdown
                 if (f2.comboBox1.SelectedItem.ToString() == "Eteindre")
                 {
                     //On éteint l'ordi
-                    Shutdown();
+                    alim.Shutdown();
                 }
                 if (f2.comboBox1.SelectedItem.ToString() == "Mettre en veille")
                 {
@@ -180,7 +122,7 @@ namespace Shutdown
             lbl_debit.Text = Download.ToString() + " KB/s";
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void btn_advanced_Click(object sender, EventArgs e)
         {
             f2.ShowDialog();
         }

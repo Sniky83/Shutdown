@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace Shutdown
 {
-    public partial class Form2 : Form
+    public partial class AdvencedForm : Form
     {
-        public Form2()
+        public AdvencedForm()
         {
             InitializeComponent();
         }

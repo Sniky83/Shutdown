@@ -1,6 +1,6 @@
 ﻿namespace Shutdown
 {
-    partial class Form1
+    partial class DownloadForm
     {
         /// <summary>
         /// Variable nécessaire au concepteur.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DownloadForm));
             this.btn_Start = new System.Windows.Forms.Button();
             this.btn_Stop = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -51,7 +51,7 @@
             this.btn_Start.TabIndex = 0;
             this.btn_Start.Text = "Démarrer";
             this.btn_Start.UseVisualStyleBackColor = true;
-            this.btn_Start.Click += new System.EventHandler(this.button1_Click);
+            this.btn_Start.Click += new System.EventHandler(this.btn_Start_Click);
             // 
             // btn_Stop
             // 
@@ -62,7 +62,7 @@
             this.btn_Stop.TabIndex = 1;
             this.btn_Stop.Text = "Arrêter";
             this.btn_Stop.UseVisualStyleBackColor = true;
-            this.btn_Stop.Click += new System.EventHandler(this.button2_Click);
+            this.btn_Stop.Click += new System.EventHandler(this.btn_Stop_Click);
             // 
             // label1
             // 
@@ -130,7 +130,7 @@
             this.btn_advanced.TabIndex = 8;
             this.btn_advanced.Text = "Avancé";
             this.btn_advanced.UseVisualStyleBackColor = true;
-            this.btn_advanced.Click += new System.EventHandler(this.button1_Click_1);
+            this.btn_advanced.Click += new System.EventHandler(this.btn_advanced_Click);
             // 
             // lbl_temps
             // 
