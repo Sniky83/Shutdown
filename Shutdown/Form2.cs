@@ -13,9 +13,6 @@ namespace Shutdown
 {
     public partial class Form2 : Form
     {
-
-        private NetworkInterface[] nicArr;
-
         public Form2()
         {
             InitializeComponent();
@@ -33,7 +30,15 @@ namespace Shutdown
 
         private void InitializeNetworkInterface()
         {
-            nicArr = NetworkInterface.GetAllNetworkInterfaces();
+            foreach (NetworkInterface netInterface in NetworkInterface.GetAllNetworkInterfaces())
+            {
+                if (netInterface.OperationalStatus == OperationalStatus.Up)
+                {
+                    cmbInterface.Items.Add(netInterface.NetworkInterfaceType);
+                    cmbInterface.SelectedIndex = 0;
+                }
+            }
+            /*nicArr = NetworkInterface.GetAllNetworkInterfaces();
             List<string> goodAdapters = new List<string>();
 
             foreach (NetworkInterface nicnac in nicArr)
@@ -41,10 +46,11 @@ namespace Shutdown
                 if (nicnac.SupportsMulticast && nicnac.GetIPv4Statistics().UnicastPacketsReceived >= 1 && nicnac.OperationalStatus.ToString() == "Up")
                 {
                     goodAdapters.Add(nicnac.Name);
+                    cmbInterface.Items.Add(nicnac.Name);
                 }
+            }*/
 
-            }
-            if (goodAdapters.Count != cmbInterface.Items.Count && goodAdapters.Count != 0)
+            /*if (goodAdapters.Count != cmbInterface.Items.Count && goodAdapters.Count != 0)
             {
                 cmbInterface.Items.Clear();
                 foreach (string gadpt in goodAdapters)
@@ -53,7 +59,10 @@ namespace Shutdown
                 }
                 cmbInterface.SelectedIndex = 0;
             }
-            if (goodAdapters.Count == 0) cmbInterface.Items.Clear();
+            if (goodAdapters.Count == 0)
+            {
+                cmbInterface.Items.Clear();
+            }*/
         }
     }
 }

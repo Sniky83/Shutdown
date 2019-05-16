@@ -30,3 +30,14 @@ D:\OneDrive\Documents\MesApplications\Shutdown\Shutdown\obj\Debug\Shutdown.cspro
 D:\OneDrive\Documents\MesApplications\Shutdown\Shutdown\obj\Debug\Shutdown.csproj.CoreCompileInputs.cache
 D:\OneDrive\Documents\MesApplications\Shutdown\Shutdown\obj\Debug\Shutdown.exe
 D:\OneDrive\Documents\MesApplications\Shutdown\Shutdown\obj\Debug\Shutdown.pdb
+D:\documents\GitHub\Shutdown\Shutdown\bin\Debug\Shutdown.exe.config
+D:\documents\GitHub\Shutdown\Shutdown\bin\Debug\Shutdown.exe
+D:\documents\GitHub\Shutdown\Shutdown\bin\Debug\Shutdown.pdb
+D:\documents\GitHub\Shutdown\Shutdown\obj\Debug\Shutdown.Form1.resources
+D:\documents\GitHub\Shutdown\Shutdown\obj\Debug\Shutdown.Form2.resources
+D:\documents\GitHub\Shutdown\Shutdown\obj\Debug\Shutdown.Properties.Resources.resources
+D:\documents\GitHub\Shutdown\Shutdown\obj\Debug\Shutdown.csproj.GenerateResource.Cache
+D:\documents\GitHub\Shutdown\Shutdown\obj\Debug\Shutdown.csproj.CoreCompileInputs.cache
+D:\documents\GitHub\Shutdown\Shutdown\obj\Debug\Shutdown.exe
+D:\documents\GitHub\Shutdown\Shutdown\obj\Debug\Shutdown.pdb
+D:\documents\GitHub\Shutdown\Shutdown\obj\Debug\Shutdown.csprojAssemblyReference.cache
