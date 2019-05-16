@@ -16,10 +16,12 @@ namespace Shutdown
         private long Download;
         private AdvencedForm f2 = new AdvencedForm();
         private C_Alimentation alim;
+        private NetworkInterface Nic = NetworkInterface.GetAllNetworkInterfaces()[0];
         //NetworkInterfaceConnexion (attribution de la NIC de defaut)
-        private NetworkInterface Nic = (NetworkInterface.GetAllNetworkInterfaces().FirstOrDefault
-        (i => i.NetworkInterfaceType != NetworkInterfaceType.Loopback && i.NetworkInterfaceType != NetworkInterfaceType.Tunnel));
+        /*private NetworkInterface Nic = (NetworkInterface.GetAllNetworkInterfaces().FirstOrDefault
+        (i => i.NetworkInterfaceType != NetworkInterfaceType.Loopback && i.NetworkInterfaceType != NetworkInterfaceType.Tunnel));*/
         IPv4InterfaceStatistics interfaceStats;
+        //NetworkInterface.GetAllNetworkInterfaces()[0].GetIPv4Statistics().BytesReceived;
 
         public DownloadForm()
         {
@@ -34,6 +36,11 @@ namespace Shutdown
             Timer_Debit.Enabled = true;
             btn_Stop.Enabled = true;
             btn_Start.Enabled = false;
+        }
+
+        private void btn_advanced_Click(object sender, EventArgs e)
+        {
+            f2.ShowDialog();
         }
 
         private void btn_Stop_Click(object sender, EventArgs e)
@@ -120,11 +127,6 @@ namespace Shutdown
                 flag = false;
             }
             lbl_debit.Text = Download.ToString() + " KB/s";
-        }
-
-        private void btn_advanced_Click(object sender, EventArgs e)
-        {
-            f2.ShowDialog();
         }
     }
 }
