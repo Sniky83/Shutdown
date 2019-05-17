@@ -13,12 +13,14 @@ namespace Shutdown
 {
     public partial class AdvancedForm : Form
     {
-        public int SelectedItem;
-        public byte[] tab;
+        //public int SelectedItem;
+        //public byte[] tab;
+        public byte index = 0;
+
         public AdvancedForm()
         {
             InitializeComponent();
-            byte i = 0;
+            /*byte i = 0;
             byte j = 0;
             byte nb = 0;
 
@@ -46,22 +48,56 @@ namespace Shutdown
                 }
                 i++;
             }
-
-            NetworkInterface[] Nic = NetworkInterface.GetAllNetworkInterfaces();
-            Console.WriteLine(Nic[1].GetIPv4Statistics().BytesReceived);
-
             cmb_Interface.Items.RemoveAt(j-1);
-            cmb_Interface.SelectedIndex = 0;
+            cmb_Interface.SelectedIndex = 0;*/
+
+            //Code pour récupérer l'interface réseau qui récup le plus de bytes
+            byte nbAdaptaters = 0;
+            byte nbBytesReceivedUpperZero = 0;
+            NetworkInterface[] Nic = NetworkInterface.GetAllNetworkInterfaces();
+            long BytesReceived = 0;
+
+            byte x = 0;
+
+            foreach (NetworkInterface adaptaters in NetworkInterface.GetAllNetworkInterfaces())
+            {
+                BytesReceived = Nic[nbAdaptaters].GetIPv4Statistics().BytesReceived;
+                if(BytesReceived > 0)
+                {
+                    nbBytesReceivedUpperZero++;
+                }
+                nbAdaptaters++;
+            }
+            BytesReceived = 0;
+
+            long[] stockBytesReceived = new long[nbAdaptaters];
+            long[] stockBytesReceivedUpperZero = new long[nbBytesReceivedUpperZero];
+
+            for (byte i = 0; i < nbAdaptaters; i++)
+            {
+                BytesReceived = Nic[i].GetIPv4Statistics().BytesReceived;
+                stockBytesReceived[i] = BytesReceived;
+
+                if (stockBytesReceived[i] > 0)
+                {
+                    stockBytesReceivedUpperZero[x] = stockBytesReceived[i];
+                    if(x == 0 || stockBytesReceivedUpperZero[x] > stockBytesReceivedUpperZero[x-1])
+                    {
+                        index = i;
+                        x++;
+                    }
+                }
+            }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btn_ok_Click(object sender, EventArgs e)
         {
             Close();
         }
 
         private void CmbInterface_SelectedIndexChanged(object sender, EventArgs e)
         {
-            SelectedItem = tab[cmb_Interface.SelectedIndex];
+            //SelectedItem = tab[cmb_Interface.SelectedIndex];
         }
     }
 }

@@ -106,7 +106,7 @@ namespace Shutdown
         {
             NetworkInterface[] Nic = NetworkInterface.GetAllNetworkInterfaces();
 
-            long downloadRate = Nic[fAdvanced.SelectedItem].GetIPv4Statistics().BytesReceived;
+            long downloadRate = Nic[fAdvanced.index].GetIPv4Statistics().BytesReceived;
 
             long nowBytesReceived = downloadRate;
 

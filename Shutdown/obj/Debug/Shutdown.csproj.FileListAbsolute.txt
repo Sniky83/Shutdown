@@ -41,3 +41,14 @@ D:\documents\GitHub\Shutdown\Shutdown\obj\Debug\Shutdown.pdb
 D:\documents\GitHub\Shutdown\Shutdown\obj\Debug\Shutdown.csprojAssemblyReference.cache
 D:\documents\GitHub\Shutdown\Shutdown\obj\Debug\Shutdown.DownloadForm.resources
 D:\documents\GitHub\Shutdown\Shutdown\obj\Debug\Shutdown.AdvancedForm.resources
+E:\Documents\GitHub\Shutdown\Shutdown\obj\Debug\Shutdown.exe
+E:\Documents\GitHub\Shutdown\Shutdown\obj\Debug\Shutdown.pdb
+E:\Documents\GitHub\Shutdown\Shutdown\bin\Debug\Shutdown.exe.config
+E:\Documents\GitHub\Shutdown\Shutdown\bin\Debug\Shutdown.exe
+E:\Documents\GitHub\Shutdown\Shutdown\bin\Debug\Shutdown.pdb
+E:\Documents\GitHub\Shutdown\Shutdown\obj\Debug\Shutdown.csprojAssemblyReference.cache
+E:\Documents\GitHub\Shutdown\Shutdown\obj\Debug\Shutdown.DownloadForm.resources
+E:\Documents\GitHub\Shutdown\Shutdown\obj\Debug\Shutdown.AdvancedForm.resources
+E:\Documents\GitHub\Shutdown\Shutdown\obj\Debug\Shutdown.Properties.Resources.resources
+E:\Documents\GitHub\Shutdown\Shutdown\obj\Debug\Shutdown.csproj.GenerateResource.cache
+E:\Documents\GitHub\Shutdown\Shutdown\obj\Debug\Shutdown.csproj.CoreCompileInputs.cache

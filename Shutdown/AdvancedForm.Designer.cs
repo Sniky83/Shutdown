@@ -110,7 +110,7 @@
             this.btn_ok.TabIndex = 5;
             this.btn_ok.Text = "Valider";
             this.btn_ok.UseVisualStyleBackColor = true;
-            this.btn_ok.Click += new System.EventHandler(this.button1_Click);
+            this.btn_ok.Click += new System.EventHandler(this.btn_ok_Click);
             // 
             // label4
             // 
