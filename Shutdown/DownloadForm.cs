@@ -13,7 +13,7 @@ namespace Shutdown
     {
         private AdvancedForm fAdvanced = new AdvancedForm();
         private long Download;
-        private long previousbytesreceived = 0;
+        private long previousBytesReceived = 0;
         private bool flag = false;
         private byte compteur = 0;
 
@@ -104,16 +104,18 @@ namespace Shutdown
 
         private void Timer_Debit_Tick(object sender, EventArgs e)
         {
-            NetworkInterface Nic = NetworkInterface.GetAllNetworkInterfaces()[fAdvanced.SelectedItem];
+            NetworkInterface[] Nic = NetworkInterface.GetAllNetworkInterfaces();
 
-            IPv4InterfaceStatistics interfaceStats = Nic.GetIPv4Statistics();
+            long downloadRate = Nic[fAdvanced.SelectedItem].GetIPv4Statistics().BytesReceived;
 
-            if (previousbytesreceived != 0)
+            long nowBytesReceived = downloadRate;
+
+            if (previousBytesReceived != 0)
             {
-                Download = (interfaceStats.BytesReceived - previousbytesreceived) / 1024;
+                Download = (nowBytesReceived - previousBytesReceived) / 1024;
             }
 
-            previousbytesreceived = NetworkInterface.GetAllNetworkInterfaces()[fAdvanced.SelectedItem].GetIPv4Statistics().BytesReceived;
+            previousBytesReceived = downloadRate;
 
             if (Download >= fAdvanced.numUpDown_Download.Value)
             {

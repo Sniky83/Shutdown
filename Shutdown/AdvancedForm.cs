@@ -69,7 +69,7 @@ namespace Shutdown
                 Console.WriteLine("  Index : {0}", p.Index);
             }*/
 
-            cmb_Interface.SelectedIndex = 1;
+            cmb_Interface.SelectedIndex = 0;
         }
 
         private void button1_Click(object sender, EventArgs e)
