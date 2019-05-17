@@ -12,14 +12,51 @@ namespace Shutdown
     public partial class DownloadForm : Form
     {
         private AdvancedForm fAdvanced = new AdvancedForm();
-        private long Download;
+        private long Download = 0;
         private long previousBytesReceived = 0;
         private bool flag = false;
         private byte compteur = 0;
+        private byte index = 0;
 
         public DownloadForm()
         {
             InitializeComponent();
+            //Code pour récupérer l'interface réseau qui récup le plus de bytes
+            byte nbAdaptaters = 0;
+            byte nbBytesReceivedUpperZero = 0;
+            NetworkInterface[] Nic = NetworkInterface.GetAllNetworkInterfaces();
+            long BytesReceived = 0;
+
+            foreach (NetworkInterface adaptaters in NetworkInterface.GetAllNetworkInterfaces())
+            {
+                BytesReceived = Nic[nbAdaptaters].GetIPv4Statistics().BytesReceived;
+                if (BytesReceived > 0)
+                {
+                    nbBytesReceivedUpperZero++;
+                }
+                nbAdaptaters++;
+            }
+            BytesReceived = 0;
+
+            long[] stockBytesReceived = new long[nbAdaptaters];
+            long[] stockBytesReceivedUpperZero = new long[nbBytesReceivedUpperZero];
+            byte x = 0;
+
+            for (byte i = 0; i < nbAdaptaters; i++)
+            {
+                BytesReceived = Nic[i].GetIPv4Statistics().BytesReceived;
+                stockBytesReceived[i] = BytesReceived;
+
+                if (stockBytesReceived[i] > 0)
+                {
+                    stockBytesReceivedUpperZero[x] = stockBytesReceived[i];
+                    if (x == 0 || stockBytesReceivedUpperZero[x] > stockBytesReceivedUpperZero[x - 1])
+                    {
+                        index = i;
+                        x++;
+                    }
+                }
+            }
         }
 
         private void btn_Start_Click(object sender, EventArgs e)
@@ -61,9 +98,9 @@ namespace Shutdown
             if (Download < fAdvanced.numUpDown_Download.Value)
             {
                 compteur++;
-                byte TempsRestant = (byte)(180 - compteur);
-                byte minutes = (byte)(TempsRestant / 60);
-                byte secondes = (byte)(TempsRestant % 60);
+                int TempsRestant = (int)(fAdvanced.secondes - compteur);
+                int minutes = (TempsRestant / 60);
+                int secondes = (TempsRestant % 60);
                 lbl_temps.Text = "Temps restant : " + minutes.ToString() + ":" + secondes.ToString();
             }
             else
@@ -72,7 +109,7 @@ namespace Shutdown
                 Timer_Temps.Enabled = false;
             }
 
-            if (compteur == 165)
+            if (compteur == fAdvanced.secondes - 15)
             {
                 if (fAdvanced.cmb_Alim.SelectedItem.ToString() == "Eteindre")
                 {
@@ -86,7 +123,7 @@ namespace Shutdown
                 }
             }
 
-            if (compteur == 180)
+            if (compteur == fAdvanced.secondes)
             {
                 if (fAdvanced.cmb_Alim.SelectedItem.ToString() == "Eteindre")
                 {
@@ -106,7 +143,7 @@ namespace Shutdown
         {
             NetworkInterface[] Nic = NetworkInterface.GetAllNetworkInterfaces();
 
-            long downloadRate = Nic[fAdvanced.index].GetIPv4Statistics().BytesReceived;
+            long downloadRate = Nic[index].GetIPv4Statistics().BytesReceived;
 
             long nowBytesReceived = downloadRate;
 
@@ -131,7 +168,7 @@ namespace Shutdown
                 lbl_etat.ForeColor = Color.Red;
                 lbl_etat.Text = "Fin du téléchargement";
                 flag = false;
-                lbl_temps.Text = "Temps restant : 3:00";
+                lbl_temps.Text = $"Temps restant : {fAdvanced.numUpDown_TempsRestant.Value}:00";
                 lbl_temps.Visible = true;
             }
             lbl_debit.Text = Download.ToString() + " KB/s";

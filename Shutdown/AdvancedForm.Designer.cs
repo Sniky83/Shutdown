@@ -37,7 +37,9 @@
             this.btn_ok = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.cmb_Interface = new System.Windows.Forms.ComboBox();
+            this.numUpDown_TempsRestant = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDown_Download)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpDown_TempsRestant)).BeginInit();
             this.SuspendLayout();
             // 
             // numUpDown_Download
@@ -130,11 +132,35 @@
             this.cmb_Interface.TabIndex = 7;
             this.cmb_Interface.SelectedIndexChanged += new System.EventHandler(this.CmbInterface_SelectedIndexChanged);
             // 
+            // numUpDown_TempsRestant
+            // 
+            this.numUpDown_TempsRestant.Location = new System.Drawing.Point(223, 171);
+            this.numUpDown_TempsRestant.Maximum = new decimal(new int[] {
+            60,
+            0,
+            0,
+            0});
+            this.numUpDown_TempsRestant.Minimum = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
+            this.numUpDown_TempsRestant.Name = "numUpDown_TempsRestant";
+            this.numUpDown_TempsRestant.Size = new System.Drawing.Size(46, 20);
+            this.numUpDown_TempsRestant.TabIndex = 8;
+            this.numUpDown_TempsRestant.Value = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
+            this.numUpDown_TempsRestant.ValueChanged += new System.EventHandler(this.NumUpDown_TempsRestant_ValueChanged);
+            // 
             // AdvancedForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(355, 209);
+            this.Controls.Add(this.numUpDown_TempsRestant);
             this.Controls.Add(this.cmb_Interface);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btn_ok);
@@ -149,6 +175,7 @@
             this.Name = "AdvancedForm";
             this.Text = "Avancé";
             ((System.ComponentModel.ISupportInitialize)(this.numUpDown_Download)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpDown_TempsRestant)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -164,5 +191,6 @@
         private System.Windows.Forms.Button btn_ok;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cmb_Interface;
+        public System.Windows.Forms.NumericUpDown numUpDown_TempsRestant;
     }
 }
