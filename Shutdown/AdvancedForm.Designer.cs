@@ -1,6 +1,6 @@
 ﻿namespace Shutdown
 {
-    partial class AdvencedForm
+    partial class AdvancedForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,35 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdvencedForm));
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdvancedForm));
+            this.numUpDown_Download = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmb_Alim = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.cmbInterface = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.cmb_Interface = new System.Windows.Forms.ComboBox();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpDown_Download)).BeginInit();
             this.SuspendLayout();
             // 
-            // numericUpDown1
+            // numUpDown_Download
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(134, 25);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
+            this.numUpDown_Download.Location = new System.Drawing.Point(134, 25);
+            this.numUpDown_Download.Maximum = new decimal(new int[] {
             200,
             0,
             0,
             0});
-            this.numericUpDown1.Minimum = new decimal(new int[] {
+            this.numUpDown_Download.Minimum = new decimal(new int[] {
             10,
             0,
             0,
             0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(58, 20);
-            this.numericUpDown1.TabIndex = 0;
-            this.numericUpDown1.Value = new decimal(new int[] {
+            this.numUpDown_Download.Name = "numUpDown_Download";
+            this.numUpDown_Download.Size = new System.Drawing.Size(58, 20);
+            this.numUpDown_Download.TabIndex = 0;
+            this.numUpDown_Download.Value = new decimal(new int[] {
             40,
             0,
             0,
@@ -89,18 +89,18 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "Choissisez une option système une fois votre téléchargement fini :";
             // 
-            // comboBox1
+            // cmb_Alim
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cmb_Alim.FormattingEnabled = true;
+            this.cmb_Alim.Items.AddRange(new object[] {
             "Eteindre",
             "Mettre en veille"});
-            this.comboBox1.Location = new System.Drawing.Point(108, 129);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 4;
-            this.comboBox1.Tag = "";
-            this.comboBox1.Text = "Eteindre";
+            this.cmb_Alim.Location = new System.Drawing.Point(108, 129);
+            this.cmb_Alim.Name = "cmb_Alim";
+            this.cmb_Alim.Size = new System.Drawing.Size(121, 21);
+            this.cmb_Alim.TabIndex = 4;
+            this.cmb_Alim.Tag = "";
+            this.cmb_Alim.Text = "Eteindre";
             // 
             // button1
             // 
@@ -121,34 +121,34 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "Choissisez votre interface réseau par défaut :";
             // 
-            // cmbInterface
+            // cmb_Interface
             // 
-            this.cmbInterface.FormattingEnabled = true;
-            this.cmbInterface.Location = new System.Drawing.Point(108, 76);
-            this.cmbInterface.Name = "cmbInterface";
-            this.cmbInterface.Size = new System.Drawing.Size(121, 21);
-            this.cmbInterface.TabIndex = 7;
+            this.cmb_Interface.FormattingEnabled = true;
+            this.cmb_Interface.Location = new System.Drawing.Point(108, 76);
+            this.cmb_Interface.Name = "cmb_Interface";
+            this.cmb_Interface.Size = new System.Drawing.Size(121, 21);
+            this.cmb_Interface.TabIndex = 7;
+            this.cmb_Interface.SelectedIndexChanged += new System.EventHandler(this.CmbInterface_SelectedIndexChanged);
             // 
-            // Form2
+            // AdvancedForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(355, 209);
-            this.Controls.Add(this.cmbInterface);
+            this.Controls.Add(this.cmb_Interface);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cmb_Alim);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.numUpDown_Download);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "Form2";
+            this.Name = "AdvancedForm";
             this.Text = "Avancé";
-            this.Load += new System.EventHandler(this.Form2_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpDown_Download)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -156,13 +156,13 @@
 
         #endregion
 
-        public System.Windows.Forms.NumericUpDown numericUpDown1;
+        public System.Windows.Forms.NumericUpDown numUpDown_Download;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        public System.Windows.Forms.ComboBox comboBox1;
+        public System.Windows.Forms.ComboBox cmb_Alim;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox cmbInterface;
+        private System.Windows.Forms.ComboBox cmb_Interface;
     }
 }

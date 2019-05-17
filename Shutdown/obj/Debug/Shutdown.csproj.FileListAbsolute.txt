@@ -40,4 +40,4 @@ D:\documents\GitHub\Shutdown\Shutdown\obj\Debug\Shutdown.exe
 D:\documents\GitHub\Shutdown\Shutdown\obj\Debug\Shutdown.pdb
 D:\documents\GitHub\Shutdown\Shutdown\obj\Debug\Shutdown.csprojAssemblyReference.cache
 D:\documents\GitHub\Shutdown\Shutdown\obj\Debug\Shutdown.DownloadForm.resources
-D:\documents\GitHub\Shutdown\Shutdown\obj\Debug\Shutdown.AdvencedForm.resources
+D:\documents\GitHub\Shutdown\Shutdown\obj\Debug\Shutdown.AdvancedForm.resources

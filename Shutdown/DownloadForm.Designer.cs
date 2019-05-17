@@ -138,12 +138,11 @@
             this.lbl_temps.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_temps.Location = new System.Drawing.Point(98, 62);
             this.lbl_temps.Name = "lbl_temps";
-            this.lbl_temps.Size = new System.Drawing.Size(16, 16);
+            this.lbl_temps.Size = new System.Drawing.Size(0, 16);
             this.lbl_temps.TabIndex = 9;
-            this.lbl_temps.Text = "0";
             this.lbl_temps.Visible = false;
             // 
-            // Form1
+            // DownloadForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -161,7 +160,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(460, 210);
-            this.Name = "Form1";
+            this.Name = "DownloadForm";
             this.Text = "Shutdown";
             this.ResumeLayout(false);
             this.PerformLayout();
