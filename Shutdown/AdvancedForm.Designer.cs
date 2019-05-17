@@ -124,9 +124,9 @@
             // cmb_Interface
             // 
             this.cmb_Interface.FormattingEnabled = true;
-            this.cmb_Interface.Location = new System.Drawing.Point(108, 76);
+            this.cmb_Interface.Location = new System.Drawing.Point(64, 76);
             this.cmb_Interface.Name = "cmb_Interface";
-            this.cmb_Interface.Size = new System.Drawing.Size(121, 21);
+            this.cmb_Interface.Size = new System.Drawing.Size(216, 21);
             this.cmb_Interface.TabIndex = 7;
             this.cmb_Interface.SelectedIndexChanged += new System.EventHandler(this.CmbInterface_SelectedIndexChanged);
             // 

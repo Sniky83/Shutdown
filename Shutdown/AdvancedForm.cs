@@ -14,21 +14,35 @@ namespace Shutdown
     public partial class AdvancedForm : Form
     {
         public int SelectedItem;
+        public int[] tab = new int[10];
         public AdvancedForm()
         {
             InitializeComponent();
-            /*foreach (NetworkInterface netInterface in NetworkInterface.GetAllNetworkInterfaces())
+            byte i = 0;
+            byte j = 0;
+            foreach (NetworkInterface netInterface in NetworkInterface.GetAllNetworkInterfaces())
             {
-                cmb_Interface.Items.Add(netInterface.NetworkInterfaceType);
-                cmb_Interface.SelectedIndex = 0;
-            }*/
+                cmb_Interface.Items.Add(netInterface.Description);
+                if (netInterface.OperationalStatus != OperationalStatus.Up)
+                {
+                    cmb_Interface.Items.RemoveAt(0);
+                }
+                else
+                {
+                    tab[j] = i;
+                    //Console.WriteLine(tab[j]);
+                    j++;
+                }
+                i++;
+            }
 
-            List<NetworkInterface> Interfaces = new List<NetworkInterface>();
+            /*List<NetworkInterface> Interfaces = new List<NetworkInterface>();
             foreach (var nic in NetworkInterface.GetAllNetworkInterfaces())
             {
-                if (nic.OperationalStatus == OperationalStatus.Up)
+                Interfaces.Add(nic);
+
+                /*if (nic.OperationalStatus == OperationalStatus.Up)
                 {
-                    Interfaces.Add(nic);
                 }
             }
 
@@ -39,12 +53,11 @@ namespace Shutdown
                     cmb_Interface.Items.Add(nic.NetworkInterfaceType);
                     Console.WriteLine();
                 }
-            }
+            }*/
             /*NetworkInterface[] nics = NetworkInterface.GetAllNetworkInterfaces();
             IPGlobalProperties properties = IPGlobalProperties.GetIPGlobalProperties();
 
-            Console.WriteLine("IPv4 interface information for {0}.{1}",
-                          properties.HostName, properties.DomainName);
+            Console.WriteLine("IPv4 interface information for {0}.{1}",properties.HostName, properties.DomainName);
 
 
             foreach (NetworkInterface adapter in nics)
@@ -54,10 +67,10 @@ namespace Shutdown
                     continue;
                 }
 
-                if (!adapter.Description.Equals(adapter.NetworkInterfaceType, StringComparison.OrdinalIgnoreCase))
-                {
-                    continue;
-                }
+                //if (!adapter.Description.Equals(adapter.NetworkInterfaceType, StringComparison.OrdinalIgnoreCase))
+                //{
+                    //continue;
+                //}
                 Console.WriteLine(adapter.Description);
                 IPInterfaceProperties adapterProperties = adapter.GetIPProperties();
                 IPv4InterfaceProperties p = adapterProperties.GetIPv4Properties();
@@ -79,7 +92,12 @@ namespace Shutdown
 
         private void CmbInterface_SelectedIndexChanged(object sender, EventArgs e)
         {
-            SelectedItem = cmb_Interface.SelectedIndex;
+            /*string test = e.ToString();
+            int Index = int.Parse(test);
+            cmb_Interface.SelectedIndex;*/
+            SelectedItem = tab[cmb_Interface.SelectedIndex];
+            //Console.WriteLine(SelectedItem);
+            //Console.WriteLine(tab[0]);
         }
     }
 }

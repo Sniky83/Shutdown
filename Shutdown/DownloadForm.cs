@@ -35,7 +35,7 @@ namespace Shutdown
         {
             Timer_Debit.Enabled = false;
             Timer_Temps.Enabled = false;
-            previousbytesreceived = 0;
+            previousBytesReceived = 0;
             fAdvanced.ShowDialog();
             if(btn_Stop.Enabled == true)
             {
