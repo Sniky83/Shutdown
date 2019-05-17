@@ -9,3 +9,14 @@ D:\OneDrive\Documents\MesApplications\Shutdown\Shutdown\obj\Release\Shutdown.csp
 D:\OneDrive\Documents\MesApplications\Shutdown\Shutdown\obj\Release\Shutdown.csproj.CoreCompileInputs.cache
 D:\OneDrive\Documents\MesApplications\Shutdown\Shutdown\obj\Release\Shutdown.exe
 D:\OneDrive\Documents\MesApplications\Shutdown\Shutdown\obj\Release\Shutdown.pdb
+D:\documents\GitHub\Shutdown\Shutdown\bin\Release\Shutdown.exe.config
+D:\documents\GitHub\Shutdown\Shutdown\bin\Release\Shutdown.exe
+D:\documents\GitHub\Shutdown\Shutdown\bin\Release\Shutdown.pdb
+D:\documents\GitHub\Shutdown\Shutdown\obj\Release\Shutdown.csprojAssemblyReference.cache
+D:\documents\GitHub\Shutdown\Shutdown\obj\Release\Shutdown.DownloadForm.resources
+D:\documents\GitHub\Shutdown\Shutdown\obj\Release\Shutdown.AdvancedForm.resources
+D:\documents\GitHub\Shutdown\Shutdown\obj\Release\Shutdown.Properties.Resources.resources
+D:\documents\GitHub\Shutdown\Shutdown\obj\Release\Shutdown.csproj.GenerateResource.cache
+D:\documents\GitHub\Shutdown\Shutdown\obj\Release\Shutdown.csproj.CoreCompileInputs.cache
+D:\documents\GitHub\Shutdown\Shutdown\obj\Release\Shutdown.exe
+D:\documents\GitHub\Shutdown\Shutdown\obj\Release\Shutdown.pdb
