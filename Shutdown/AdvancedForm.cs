@@ -37,9 +37,39 @@ namespace Shutdown
                 if (nic.GetIPProperties().GetIPv4Properties() != null)
                 {
                     cmb_Interface.Items.Add(nic.NetworkInterfaceType);
+                    Console.WriteLine();
                 }
             }
-            cmb_Interface.SelectedIndex = 0;
+            /*NetworkInterface[] nics = NetworkInterface.GetAllNetworkInterfaces();
+            IPGlobalProperties properties = IPGlobalProperties.GetIPGlobalProperties();
+
+            Console.WriteLine("IPv4 interface information for {0}.{1}",
+                          properties.HostName, properties.DomainName);
+
+
+            foreach (NetworkInterface adapter in nics)
+            {
+                if (adapter.Supports(NetworkInterfaceComponent.IPv4) == false)
+                {
+                    continue;
+                }
+
+                if (!adapter.Description.Equals(adapter.NetworkInterfaceType, StringComparison.OrdinalIgnoreCase))
+                {
+                    continue;
+                }
+                Console.WriteLine(adapter.Description);
+                IPInterfaceProperties adapterProperties = adapter.GetIPProperties();
+                IPv4InterfaceProperties p = adapterProperties.GetIPv4Properties();
+                if (p == null)
+                {
+                    Console.WriteLine("No information is available for this interface.");
+                    continue;
+                }
+                Console.WriteLine("  Index : {0}", p.Index);
+            }*/
+
+            cmb_Interface.SelectedIndex = 1;
         }
 
         private void button1_Click(object sender, EventArgs e)
