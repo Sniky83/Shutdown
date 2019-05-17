@@ -34,7 +34,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.cmb_Alim = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_ok = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.cmb_Interface = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDown_Download)).BeginInit();
@@ -102,15 +102,15 @@
             this.cmb_Alim.Tag = "";
             this.cmb_Alim.Text = "Eteindre";
             // 
-            // button1
+            // btn_ok
             // 
-            this.button1.Location = new System.Drawing.Point(129, 171);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Valider";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btn_ok.Location = new System.Drawing.Point(129, 171);
+            this.btn_ok.Name = "btn_ok";
+            this.btn_ok.Size = new System.Drawing.Size(75, 23);
+            this.btn_ok.TabIndex = 5;
+            this.btn_ok.Text = "Valider";
+            this.btn_ok.UseVisualStyleBackColor = true;
+            this.btn_ok.Click += new System.EventHandler(this.button1_Click);
             // 
             // label4
             // 
@@ -137,7 +137,7 @@
             this.ClientSize = new System.Drawing.Size(355, 209);
             this.Controls.Add(this.cmb_Interface);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btn_ok);
             this.Controls.Add(this.cmb_Alim);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -161,7 +161,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         public System.Windows.Forms.ComboBox cmb_Alim;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_ok;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cmb_Interface;
     }

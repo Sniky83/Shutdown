@@ -46,6 +46,10 @@ namespace Shutdown
                 }
                 i++;
             }
+
+            NetworkInterface[] Nic = NetworkInterface.GetAllNetworkInterfaces();
+            Console.WriteLine(Nic[1].GetIPv4Statistics().BytesReceived);
+
             cmb_Interface.Items.RemoveAt(j-1);
             cmb_Interface.SelectedIndex = 0;
         }
