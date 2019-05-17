@@ -37,8 +37,11 @@ namespace Shutdown
             Timer_Temps.Enabled = false;
             previousbytesreceived = 0;
             fAdvanced.ShowDialog();
-            Timer_Debit.Enabled = true;
-            Timer_Temps.Enabled = true;
+            if(btn_Stop.Enabled == true)
+            {
+                Timer_Debit.Enabled = true;
+                Timer_Temps.Enabled = true;
+            }
         }
 
         private void btn_Stop_Click(object sender, EventArgs e)

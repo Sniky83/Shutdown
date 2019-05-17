@@ -19,11 +19,8 @@ namespace Shutdown
             InitializeComponent();
             foreach (NetworkInterface netInterface in NetworkInterface.GetAllNetworkInterfaces())
             {
-                if (netInterface.OperationalStatus == OperationalStatus.Up)
-                {
-                    cmb_Interface.Items.Add(netInterface.NetworkInterfaceType);
-                    cmb_Interface.SelectedIndex = 0;
-                }
+                cmb_Interface.Items.Add(netInterface.NetworkInterfaceType);
+                cmb_Interface.SelectedIndex = 0;
             }
         }
 
