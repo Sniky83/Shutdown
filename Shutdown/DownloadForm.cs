@@ -10,23 +10,15 @@ namespace Shutdown
 {
     public partial class DownloadForm : Form
     {
-        private byte compteur = 0;
-        private bool flag = false;
-        private long previousbytesreceived = 0;
-        private long Download;
         private AdvencedForm f2 = new AdvencedForm();
-        private C_Alimentation alim;
-        private NetworkInterface Nic = NetworkInterface.GetAllNetworkInterfaces()[0];
-        //NetworkInterfaceConnexion (attribution de la NIC de defaut)
-        /*private NetworkInterface Nic = (NetworkInterface.GetAllNetworkInterfaces().FirstOrDefault
-        (i => i.NetworkInterfaceType != NetworkInterfaceType.Loopback && i.NetworkInterfaceType != NetworkInterfaceType.Tunnel));*/
-        IPv4InterfaceStatistics interfaceStats;
-        //NetworkInterface.GetAllNetworkInterfaces()[0].GetIPv4Statistics().BytesReceived;
+        private long Download;
+        private long previousbytesreceived = 0;
+        private bool flag = false;
+        private byte compteur = 0;
 
         public DownloadForm()
         {
             InitializeComponent();
-            alim = new C_Alimentation();
         }
 
         private void btn_Start_Click(object sender, EventArgs e)
@@ -84,6 +76,7 @@ namespace Shutdown
                 if (f2.comboBox1.SelectedItem.ToString() == "Eteindre")
                 {
                     //On éteint l'ordi
+                    C_Alimentation alim = new C_Alimentation();
                     alim.Shutdown();
                 }
                 if (f2.comboBox1.SelectedItem.ToString() == "Mettre en veille")
@@ -102,9 +95,16 @@ namespace Shutdown
 
         private void Timer_Debit_Tick(object sender, EventArgs e)
         {
-            interfaceStats = Nic.GetIPv4Statistics();
+            //NetworkInterfaceConnexion (attribution de la NIC de defaut)
+            /*private NetworkInterface Nic = (NetworkInterface.GetAllNetworkInterfaces().FirstOrDefault
+            (i => i.NetworkInterfaceType != NetworkInterfaceType.Loopback && i.NetworkInterfaceType != NetworkInterfaceType.Tunnel));*/
+            //NetworkInterface.GetAllNetworkInterfaces()[0].GetIPv4Statistics().BytesReceived;
 
-            if(previousbytesreceived != 0)
+            NetworkInterface Nic = NetworkInterface.GetAllNetworkInterfaces()[0];
+
+            IPv4InterfaceStatistics interfaceStats = Nic.GetIPv4Statistics();
+
+            if (previousbytesreceived != 0)
             {
                 Download = (interfaceStats.BytesReceived - previousbytesreceived) / 1024;
             }
@@ -114,7 +114,7 @@ namespace Shutdown
             if (Download >= f2.numericUpDown1.Value)
             {
                 lbl_etat.ForeColor = Color.Green;
-                lbl_etat.Text = "Téléchargement en cours";
+                lbl_etat.Text = "Téléchargement en cours...";
                 lbl_temps.Visible = false;
                 flag = true;
             }
