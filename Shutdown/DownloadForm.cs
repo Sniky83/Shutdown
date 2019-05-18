@@ -9,7 +9,7 @@ using System.Threading;
 
 namespace Shutdown
 {
-    private partial class DownloadForm : Form
+    public partial class DownloadForm : Form
     {
         private AdvancedForm fAdvanced;
         private long download = 0;
@@ -22,6 +22,7 @@ namespace Shutdown
         {
             InitializeComponent();
             fAdvanced = new AdvancedForm();
+            long test;
 
             //Code pour récupérer l'interface réseau qui récup le plus de bytes
             byte nbAdaptaters = 0;
