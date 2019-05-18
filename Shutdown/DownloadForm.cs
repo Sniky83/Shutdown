@@ -24,8 +24,9 @@ namespace Shutdown
             //Code pour récupérer l'interface réseau qui récup le plus de bytes
             byte nbAdaptaters = 0;
             byte nbBytesReceivedUpperZero = 0;
-            NetworkInterface[] Nic = NetworkInterface.GetAllNetworkInterfaces();
             long BytesReceived = 0;
+
+            NetworkInterface[] Nic = NetworkInterface.GetAllNetworkInterfaces();
 
             foreach (NetworkInterface adaptaters in NetworkInterface.GetAllNetworkInterfaces())
             {
@@ -50,6 +51,7 @@ namespace Shutdown
                 if (stockBytesReceived[i] > 0)
                 {
                     stockBytesReceivedUpperZero[x] = stockBytesReceived[i];
+
                     if (x == 0 || stockBytesReceivedUpperZero[x] > stockBytesReceivedUpperZero[x - 1])
                     {
                         index = i;
