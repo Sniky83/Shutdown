@@ -11,8 +11,8 @@ namespace Shutdown
 {
     public partial class DownloadForm : Form
     {
-        private AdvancedForm fAdvanced;
-        private long download = 0;
+        private AdvancedForm fAdvanced = new AdvancedForm();
+        private long Download = 0;
         private long previousBytesReceived = 0;
         private bool flag = false;
         private byte compteur = 0;
@@ -22,7 +22,6 @@ namespace Shutdown
         {
             InitializeComponent();
             fAdvanced = new AdvancedForm();
-            long test;
 
             //Code pour récupérer l'interface réseau qui récup le plus de bytes
             byte nbAdaptaters = 0;
@@ -77,7 +76,6 @@ namespace Shutdown
         {
             Timer_Debit.Enabled = false;
             Timer_Temps.Enabled = false;
-            download = 0;
             previousBytesReceived = 0;
             fAdvanced.ShowDialog();
             if(btn_Stop.Enabled == true)
@@ -101,7 +99,7 @@ namespace Shutdown
 
         private void Timer_Temps_Tick(object sender, EventArgs e)
         {
-            if (download < fAdvanced.numUpDown_Download.Value)
+            if (Download < fAdvanced.numUpDown_Download.Value)
             {
                 compteur++;
                 int TempsRestant = (int)(fAdvanced.secondes - compteur);
@@ -155,12 +153,12 @@ namespace Shutdown
 
             if (previousBytesReceived != 0)
             {
-                download = (nowBytesReceived - previousBytesReceived) / 1024;
+                Download = (nowBytesReceived - previousBytesReceived) / 1024;
             }
 
             previousBytesReceived = downloadRate;
 
-            if (download >= fAdvanced.numUpDown_Download.Value)
+            if (Download >= fAdvanced.numUpDown_Download.Value)
             {
                 lbl_etat.ForeColor = Color.Green;
                 lbl_etat.Text = "Téléchargement en cours...";
@@ -168,7 +166,7 @@ namespace Shutdown
                 flag = true;
             }
 
-            if (download < fAdvanced.numUpDown_Download.Value && flag == true)
+            if (Download < fAdvanced.numUpDown_Download.Value && flag == true)
             {
                 Timer_Temps.Enabled = true;
                 lbl_etat.ForeColor = Color.Red;
@@ -177,7 +175,7 @@ namespace Shutdown
                 lbl_temps.Text = $"Temps restant : {fAdvanced.numUpDown_TempsRestant.Value}:00";
                 lbl_temps.Visible = true;
             }
-            lbl_debit.Text = download.ToString() + " KB/s";
+            lbl_debit.Text = Download.ToString() + " KB/s";
         }
     }
 }
