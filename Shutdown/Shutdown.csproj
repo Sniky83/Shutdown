@@ -48,7 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="C_Alimentation.cs" />
+    <Compile Include="C_System_Option.cs" />
     <Compile Include="DownloadForm.cs">
       <SubType>Form</SubType>
     </Compile>

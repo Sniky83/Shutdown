@@ -46,7 +46,7 @@ namespace Shutdown
                 {
                     tab[j] = i;
                     j++;
-                }
+             }
                 i++;
             }
             cmb_Interface.Items.RemoveAt(j-1);

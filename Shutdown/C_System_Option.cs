@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Shutdown
 {
-    class C_Alimentation
+    class C_System_Option
     {
         [DllImport("advapi32.dll")]
         static extern int OpenProcessToken(IntPtr ProcessHandle,

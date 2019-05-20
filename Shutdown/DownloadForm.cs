@@ -115,29 +115,29 @@ namespace Shutdown
 
             if (compteur == fAdvanced.secondes - 15)
             {
-                if (fAdvanced.cmb_Alim.SelectedItem.ToString() == "Eteindre")
+                if (fAdvanced.cmb_OptSys.SelectedItem.ToString() == "Eteindre")
                 {
-                    //l'ordi va s'éteindre (messageBox)
+                    //L'ordinateur va s'éteindre (messageBox)
                     MessageBox.Show("Téléchargement fini, l'ordinateur va s'éteindre dans 15 secondes !", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                if (fAdvanced.cmb_Alim.SelectedItem.ToString() == "Mettre en veille")
+                if (fAdvanced.cmb_OptSys.SelectedItem.ToString() == "Mettre en veille")
                 {
-                    //l'ordi va se mettre en veille (messageBox)
+                    //L'ordinateur va se mettre en veille (messageBox)
                     MessageBox.Show("Téléchargement fini, l'ordinateur va se mettre en veille dans 15 secondes !", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
 
             if (compteur == fAdvanced.secondes)
             {
-                if (fAdvanced.cmb_Alim.SelectedItem.ToString() == "Eteindre")
+                if (fAdvanced.cmb_OptSys.SelectedItem.ToString() == "Eteindre")
                 {
-                    //On éteint l'ordi
-                    C_Alimentation alim = new C_Alimentation();
-                    alim.Shutdown();
+                    //On éteint l'ordinateur
+                    C_System_Option optSys = new C_System_Option();
+                    optSys.Shutdown();
                 }
-                if (fAdvanced.cmb_Alim.SelectedItem.ToString() == "Mettre en veille")
+                if (fAdvanced.cmb_OptSys.SelectedItem.ToString() == "Mettre en veille")
                 {
-                    //Mode Veille
+                    //Mode Veille pour l'ordinateur
                     Application.SetSuspendState(PowerState.Hibernate, true, true);
                 }
             }
