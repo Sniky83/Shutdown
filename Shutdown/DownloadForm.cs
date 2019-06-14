@@ -103,7 +103,7 @@ namespace Shutdown
             if (Download < fAdvanced.numUpDown_Download.Value)
             {
                 compteur++;
-                int TempsRestant = (int)(fAdvanced.secondes - compteur);
+                int TempsRestant = fAdvanced.secondes - compteur;
                 int minutes = (TempsRestant / 60);
                 int secondes = (TempsRestant % 60);
                 lbl_temps.Text = "Temps restant : " + minutes.ToString() + ":" + secondes.ToString();

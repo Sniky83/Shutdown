@@ -15,7 +15,7 @@ namespace Shutdown
     {
         //public int SelectedItem;
         //public byte[] tab;
-        public int secondes = 0;
+        public int secondes; //{get; private set;}
 
         public AdvancedForm()
         {
