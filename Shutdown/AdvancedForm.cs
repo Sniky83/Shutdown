@@ -15,7 +15,7 @@ namespace Shutdown
     {
         //public int SelectedItem;
         //public byte[] tab;
-        public int secondes; //{get; private set;}
+        public ushort secondes {get; private set;}
 
         public AdvancedForm()
         {
@@ -54,7 +54,7 @@ namespace Shutdown
         }
         private void getSecondesFromNumUpDown()
         {
-            secondes = (int)(numUpDown_TempsRestant.Value * 60);
+            secondes = (ushort)(numUpDown_TempsRestant.Value * 60);
         }
         private void btn_ok_Click(object sender, EventArgs e)
         {

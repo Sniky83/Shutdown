@@ -16,7 +16,8 @@ namespace Shutdown
         private long Download = 0;
         private long previousBytesReceived = 0;
         private bool flag = false;
-        private byte compteur = 0;
+        private ushort compteur = 0;
+        byte compteur2 = 0;
         private byte index = 0;
 
         public DownloadForm()
@@ -103,10 +104,19 @@ namespace Shutdown
             if (Download < fAdvanced.numUpDown_Download.Value)
             {
                 compteur++;
-                int TempsRestant = fAdvanced.secondes - compteur;
-                int minutes = (TempsRestant / 60);
-                int secondes = (TempsRestant % 60);
-                lbl_temps.Text = "Temps restant : " + minutes.ToString() + ":" + secondes.ToString();
+                ushort TempsRestant = (ushort)(fAdvanced.secondes - compteur);
+                ushort minutes = (ushort)(TempsRestant / 60);
+                ushort secondes = (ushort)(TempsRestant % 60);
+                string sec = "";
+                if (secondes < 10)
+                {
+                    sec = "0" + secondes.ToString();
+                }
+                else
+                {
+                    sec = secondes.ToString();
+                }
+                lbl_temps.Text = "Temps restant : " + minutes.ToString() + ":" + sec;
             }
             else
             {
