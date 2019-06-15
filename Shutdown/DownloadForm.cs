@@ -105,8 +105,8 @@ namespace Shutdown
             {
                 compteur++;
                 ushort TempsRestant = (ushort)(fAdvanced.secondes - compteur);
-                ushort minutes = (ushort)(TempsRestant / 60);
-                ushort secondes = (ushort)(TempsRestant % 60);
+                byte minutes = (byte)(TempsRestant / 60);
+                byte secondes = (byte)(TempsRestant % 60);
                 string sec = "";
                 if (secondes < 10)
                 {
