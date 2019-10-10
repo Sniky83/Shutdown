@@ -17,7 +17,6 @@ namespace Shutdown
         private long previousBytesReceived = 0;
         private bool flag = false;
         private ushort compteur = 0;
-        byte compteur2 = 0;
         private byte index = 0;
 
         public DownloadForm()
